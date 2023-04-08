@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 20%;
+  border-radius: 15px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+
+<h2>Hotels</h2>
+{%for i in hotels%}
+<div class="card ">
+  <img src="{{i.img.url}}" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>{{i.name}}</b></h4> 
+    <p>Price:{{i.price}}</p> 
+  </div>
+</div><br>
+{%endfor%}
+
+</body>
+</html> 

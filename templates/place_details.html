@@ -44,7 +44,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Page Content -->
   <div class="container">
 
@@ -65,10 +65,10 @@
         <h3 class="my-3">Description</h3>
         <p>{{place.place_desc}}</p>
         <h3 class="my-3">Also Known as</h3>
-        {{place.place_alias}}
-
+        {{place.place_alias}}<br><br>
+        <h3><a href="{% url 'hotels' place.place_name %}" style="color:black;">Click here to look in the hotels</a></h3>
       </div>
-
+      
     </div>
     <!-- /.row -->
 

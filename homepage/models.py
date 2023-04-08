@@ -14,7 +14,13 @@ class Place(models.Model):
 
 class hotel(models.Model):
     location=models.CharField(max_length=50,null=True,blank=True)
+    img=models.ImageField(upload_to='hotels',default='hotels/default.jpg')
     name=models.CharField(max_length=50,null=True,blank=True)
     offer=models.BooleanField(default=False)
     price=models.IntegerField()
-    address=models.CharField(max_length=50)
+    address=models.CharField(max_length=5000)
+
+class contactus(models.Model):
+    username=models.CharField(max_length=50,null=True,blank=True)
+    email=models.EmailField(null=True,blank=True)
+    message=models.TextField(null=True,blank=True)

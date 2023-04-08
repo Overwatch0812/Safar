@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="contactUs">
+        <div class="container">
+            <div class="heading">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="divisions">
+                <div class="leftform">
+                    
+                        
+                            
+                            <div class="form">
+                                <!-- <h2>Contact us</h2> -->
+                                <form action="contactuss" method="post">
+                                    {%csrf_token%}
+                                    <div class="input-label">
+                                        <label for="Name"><h3>Username</h3></label>
+                                        <input type="text" id="Name"   name="username">
+                                    </div>
+                                    <div class="input-label">
+                                        <label for="Email"><h3>Your Mail-id</h3></label>
+                                        <input type="email" id="Email"   name="email">
+                                    </div>
+                                    <div class="input-label">
+                                        <label for="Email"><h3>Message</h3> </label>
+                                        <input type="textarea" name="message">
+                                    </div>
+                                    
+                                    
+                
+                                    <input type="submit" value="Send" class="submit signinbutton signupbutton">
+                
+                
+                                </form>
+                                <span id="msg"></span>
+                            </div>
+                        </div>
+                            <div class="boxpic">
+                               
+                
+                            </div>
+                        
+                    
+                </div>
+            </div>
+        
+
+    </section>
+</body>
+</html>
