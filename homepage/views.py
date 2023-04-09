@@ -2,6 +2,9 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import auth,User
 from .models import Place,hotel,contactus
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
+from safar2 import settings
+
 
 # Create your views here.
 
@@ -19,15 +22,19 @@ def contactuss(request):
     if request.method=='POST':
         username=request.POST['username']
         email=request.POST['email']
+        subject=request.POST['subject']
         message=request.POST['message']
-        text=contactus.objects.get(id=request.user.id)
-        text.name=name
-        text.email=email
-        text.message=message
-        text.save()
+        contact=contactus()
+        contact.username=username
+        contact.email=email
+        contact.subject=subject
+        contact.message=message
+        contact.save()
+        send_mail(subject,message,'backendlord08@gmail.com',[email])
         return redirect('/')
     else:
-        return render(request,'contactus.html')
+        user=User.objects.get(id=request.user.id)
+        return render(request,'contactus.html',{'user':user})
 
 def hotels(request,place_name):
     hotels=hotel.objects.filter(location=place_name)

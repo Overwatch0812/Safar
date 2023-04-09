@@ -22,5 +22,6 @@ class hotel(models.Model):
 
 class contactus(models.Model):
     username=models.CharField(max_length=50,null=True,blank=True)
+    subject=models.CharField(max_length=100,null=True,blank=True)
     email=models.EmailField(null=True,blank=True)
     message=models.TextField(null=True,blank=True)
