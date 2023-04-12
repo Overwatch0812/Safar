@@ -45,3 +45,11 @@ def hotels(request,place_name):
 def place_details(request, id):
     place=Place.objects.get(id=id)
     return render(request,'place_details.html',{'place':place})
+
+@login_required
+def hotel_details(request, id):
+    hotel2=hotel.objects.get(id=id)
+    return render(request,'hotel_details.html',{'hotel':hotel2})
+
+def chatbot(request):
+    return render(request,'chatbot.html')

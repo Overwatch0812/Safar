@@ -13,6 +13,7 @@
   transition: 0.3s;
   width: 20%;
   border-radius: 15px;
+
 }
 
 .card:hover {
@@ -26,20 +27,30 @@ img {
 .container {
   padding: 2px 16px;
 }
+
+.flexBox
+{
+  display: flex;
+  flex-direction: column;
+}
 </style>
 </head>
 <body>
 
 <h2>Hotels</h2>
 {%for i in hotels%}
-<div class="card ">
-  <img src="{{i.img.url}}" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>{{i.name}}</b></h4> 
-    <p>Price:{{i.price}}</p> 
-  </div>
-</div><br>
-{%endfor%}
+<div class="flexBox">
+  
+  <div class="card ">
+    <img src="{{i.img.url}}" alt="Avatar" style="width:100%">
+    <div class="container">
+      <h4><strong><a href="{% url 'hotel_details' i.id %}">{{i.name}}</a></strong></h4> 
+      <p>Price:{{i.price}}</p> 
+    </div>
+  </div><br>
+
+</div>
+  {%endfor%}
 
 </body>
 </html> 

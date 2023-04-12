@@ -19,6 +19,7 @@ class hotel(models.Model):
     offer=models.BooleanField(default=False)
     price=models.IntegerField()
     address=models.CharField(max_length=5000)
+    room_available=models.CharField(max_length=5000,null=True,blank=True)
 
 class contactus(models.Model):
     username=models.CharField(max_length=50,null=True,blank=True)

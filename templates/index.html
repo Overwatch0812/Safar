@@ -27,6 +27,10 @@
 	<link rel="stylesheet" href="/static/css/animate.min.css">
 	<link rel="stylesheet" href="/static/css/owl.carousel.css">
 	<link rel="stylesheet" href="/static/css/main.css">
+
+	<style>
+
+	</style>
 </head>
 
 <body>
@@ -54,6 +58,7 @@
 							<li><a href="AboutUs">About Us</a></li>
 							{%if user.is_authenticated%}
 
+							<li><a href="chatbot">Chat with Us</a></li>
 							<li><a href="contactuss">Contact Us</a></li>
 							<li><a href="accounts/logout">Log out</a></li>
 							{%else%}
@@ -107,7 +112,7 @@
 				{%for place in places%}
 				<div class="filters-content">
 					<div class="row grid">
-						<div class="single-portfolio col-sm-4 all {{place.place_region}}">
+						<div class="single-portfolio col-sm-12 all {{place.place_region}}" style="left: 12%; position: absolute; top: 0px;" >
 							<div class="item">
 								<img src="{{place.place_pic.url}}" alt="Work 1">
 								<div class="p-inner">
