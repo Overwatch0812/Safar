@@ -4,6 +4,7 @@ from .models import Place,hotel,contactus
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from safar2 import settings
+from django.db.models import Q
 
 
 # Create your views here.
@@ -53,3 +54,12 @@ def hotel_details(request, id):
 
 def chatbot(request):
     return render(request,'chatbot.html')
+
+@login_required
+def search(request):
+    if request.method=='POST':
+        search=request.POST['search']
+        place=Place.objects.filter(Q(place_name__icontains=search)|Q(state_name__icontains=search) )
+        return render(request,'search.html',{'place':place})
+    else:
+        return render(request,'search.html')

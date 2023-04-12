@@ -10,4 +10,5 @@ urlpatterns=[
     path('place_details/<int:id>',views.place_details,name='place_details'),
     path('hotel_details/<int:id>',views.hotel_details,name='hotel_details'),
     path('chatbot',views.chatbot,name='chatbot'),
+    path('search',views.search,name='search'),
 ]
